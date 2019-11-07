@@ -1,0 +1,36 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+    <img width="300" alt="Angular Logo" src="https://cdn3.iconfinder.com/data/icons/personal-business-finance/64/x-66-512.png">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-sm-12 col-lg-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">{{currencyFrom.symbol}}</span>
+                </div>
+                <input type="text" class="form-control" type="number" [(ngModel)]="amount" placeholder="{{currencyFrom.name}}" aria-describedby="basic-addon1">
+            </div>
+        </div>
+        <div class="col-sm-12 col-sm-12 col-lg-6">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">{{currencyTo.symbol}}</span>
+                </div>
+                <input type="text" class="form-control" [(ngModel)]="totalConvertedAmount" disabled placeholder="{{currencyTo.name}}" aria-describedby="basic-addon1">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="align-content: center">
+    <div class="row">
+        <div class="col-sm-12 col-sm-12 col-lg-12">
+            <button type="button" (click)="createCurrencyConversion()" class="btn btn-primary">Calculate</button>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
